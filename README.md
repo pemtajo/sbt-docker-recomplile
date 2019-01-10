@@ -4,6 +4,8 @@ even though the sources, artifacts, jdk and any residual caches are the same.
 This reproduce the issue by running `sbt compile` and `sbt run` in two consecutive (but different)
 steps in the docker build. 
 
+### Issue
+
 To reproduce the issue:
 ```bash
 docker build .
@@ -33,3 +35,12 @@ It shows the sources getting invalidated and running the recompilation.
 [debug] All sources are invalidated.
 [debug] Recompiling all 1 sources: invalidated sources (1) exceeded 50.0% of all sources
 ```
+
+### Solution
+
+A workaround is proposed in https://github.com/sbt/sbt/issues/4168#issuecomment-417655678.
+
+- Java 8: Setting -Dsbt.io.jdktimestamps=true when running SBT as recommended in
+https://github.com/sbt/sbt/issues/4168#issuecomment-417655678 to workaround this issue.
+
+- Newer: Follow recomendation in https://github.com/sbt/sbt/issues/4168#issuecomment-417658294
