@@ -40,7 +40,7 @@ It shows the sources getting invalidated and running the recompilation.
 
 A workaround is proposed in https://github.com/sbt/sbt/issues/4168#issuecomment-417655678.
 
-- Java 8: Setting -Dsbt.io.jdktimestamps=true when running SBT as recommended in
+- Java 8: Setting `-Dsbt.io.jdktimestamps=true` when running SBT as recommended in
 https://github.com/sbt/sbt/issues/4168#issuecomment-417655678 to workaround this issue.
 
-- Newer: Follow recomendation in https://github.com/sbt/sbt/issues/4168#issuecomment-417658294
+- Newer: Follow recommendation in https://github.com/sbt/sbt/issues/4168#issuecomment-417658294
